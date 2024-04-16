@@ -1,0 +1,15 @@
+* { /* selector universal, de menor jerarquia (buena practica) */
+    background-color: gray;
+}
+
+body{ /*selector de elemento, jerarquia mayor a la universal (buena practica) */
+    color: blue;
+}
+
+.header { /*selector de clases, jerarquia mayor a la universal y al de elementos (buena practica, son los mas recomendables) */
+    color: red;
+}        
+
+#mercado-libre { /*selector de ids, jerarquia mayor a la universal, al de elementos y al de clases (casos muy especificos) */
+    color: green;
+}

@@ -1,0 +1,38 @@
+* { /* a esto se le llama normalize o "normalizacion" */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: rgb(115, 115, 115);
+}
+
+.padre {
+    background-color: greenyellow;
+    height: 100vh; /* 100% del viewport height*/
+    width: 100vw; /* 100% del viewport width */
+    flex-direction: row; /* row es el valor por defecto de display flex */
+    row-gap: 50px; /* espaciado entre lineas de hijos, sirve para declarar un minimo al achicar */
+    column-gap: 50px; /* espaciado entre columnas de hijos, sirve para declarar un minimo al achicar */
+    flex-wrap: wrap; /* funciona para decir cuando los elementos se van a desplazar */
+    display: flex; 
+    justify-content: space-between; /* se van a los costados los elementos mas cercanos a los lados. Alinea el eje horizontal, varia segun el flex-direction */
+    padding: 20px 20px 0px 20px; /* separa los elementos de los lados de la pagina */
+    align-items: center; /* alinea el eje vertical, varia segun el flex-direction */
+}
+
+.padre .hijo { /* al hacer esto, la especificidad aumenta */
+    background-color: green;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.padre .especial {
+    background-color: rgb(128, 0, 0);
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+}

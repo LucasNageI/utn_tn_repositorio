@@ -1,0 +1,164 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size:small
+}
+
+:root {     /* se declaran las  variables */
+    --color-texto: #3a3b3c;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+/* HEADER START */
+
+.header {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-bottom: 1px solid var(--color-texto);
+}
+
+.header .titulo-pais-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.header .pais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.header .titulo-pais-container .bandera-argentina {
+    width: 35px;
+}
+
+.header .titulo-pais-container .img-hostinger {
+    width: 140px;
+}
+
+.header .nav-container .nav .lista {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.header .nav-container .nav .lista .link {
+    text-decoration: none;
+    color: var(--color-texto);
+}
+
+.header .nav-container .nav .lista .link-btn {
+    text-decoration: none;
+    color: var(--color-texto);
+    border: 2px solid var(--color-texto);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* HEADER END */
+
+/* MAIN START */
+
+.main {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .section {
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.main .section .cartas {
+    width: 150px;
+    height: 230px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .section .cartas .colores {
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.main .section .cartas .colores .color:nth-child(1) {
+    height: 35%;
+    background-color: rgb(63, 79, 79);
+}
+.main .section .cartas .colores .color:nth-child(2) {
+    height: 30%;
+    background-color: rgb(130, 130, 130);
+}
+.main .section .cartas .colores .color:nth-child(3) {
+    height: 20%;
+    background-color: rgb(92, 131, 131);
+}
+.main .section .cartas .colores .color:nth-child(4) {
+    height: 15%;
+    background-color: rgb(0, 0, 0);
+}
+
+.main .section .cartas .controladores {
+    width: 100%;
+    height: 20%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.main .section .cartas .controladores .boton {
+    height: 30px;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    background-color: rgb(216, 216, 216);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.main .section .cartas .controladores .text {
+    color: var(--color-texto); /* se llama a la variable */
+}
+
+/* MAIN END */

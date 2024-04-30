@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.padre {
+    width: 100vw;
+    height: 500vh;
+    background-color: rgb(11, 207, 207);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    position: relative; /* si este position seria static, los hijos con position:absolute toman en cuenta el body */
+}
+
+.padre .hijo {
+    width: 200px;
+    height: 200px;
+    background-color: darkcyan;
+}
+
+.hijo:nth-child(1) {
+    background-color: rgb(102, 150, 150);
+    position: absolute; /* es una posicion absoluta porque se mueve todo elemento, tomando en cuenta el body si el padre es position:static, o tomando en cuenta el padre si no es position:static */
+    top: 200px; /* top tiene prioridad sobre bottom */
+    /* bottom: 20px; */
+    left: 200px; /* left tiene prioridad sobre right */
+    /* right: 20px; */
+
+    /* top, bottom, left, right no funcionan con position: static */
+}
+.hijo:nth-child(2) {
+    background-color: rgb(52, 74, 74);
+    position: relative; /* es una posicion relativa porque se movio teniendo en cuenta su espacio original */
+    top: 0px;
+    left: 0px;
+}
+.hijo:nth-child(3) {
+    background-color: rgb(179, 255, 255);
+    z-index: 2; /* hace que se superponga de los demas elementos, el valor default es z-index: 1; */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+.hijo:nth-child(4) {
+    background-color: rgb(0, 57, 57);
+    position: sticky;
+}

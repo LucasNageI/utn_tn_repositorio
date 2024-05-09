@@ -15,10 +15,10 @@ console.log("" || "hola")
 
 /* 
 && (AND): evalua si el primer valor es truthly o falsy
-    si es false:
+    si es falsy:
         devuelve el primer valor
 
-    su es true:
+    su es truthly:
         devuelve el segundo valor
 */
 

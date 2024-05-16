@@ -5,7 +5,7 @@
 
 /*SINTAXIS:
 
-for(let iterador = valor_inicial; limite(mientras mi iterador no llegue a este limite se va a seguir ejecutando el FOR); actualizacion(lo que pasa una vez que la condicion se cumple) ){
+for(let iterador = valor_inicial; limite(mientras mi iterador no llegue a este limite se va a seguir ejecutando el FOR); actualizacion(lo que pasa una vez que pasa una iteracion) ){
     codigo a ejecutar
 }   
 */

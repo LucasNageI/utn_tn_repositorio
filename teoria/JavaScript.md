@@ -4,6 +4,7 @@ Es un lenguaje de programacion interpretado por el v8engine.
 Se ejecuta en el navegador.
 Es un lenguaje de alto nivel.
 Es debilmente tipado, y de tipado dinamico.
+Es un lenguaje basado en prototipos.
 
 Debilmente tipado: no necesito especificar tipo de dato de una variable.
 Tipado dinamico: puede variar el tipo de dato de una variable.
@@ -261,3 +262,64 @@ Reemplaza el primer valor especificado, por el segundo valor especificado, en es
 **console.log("pepe".repeat(3))**
 
 Repite el string las veces que sea especificado, en este caso, 3 veces.
+
+# Objetos (clase 15)
+
+Los objetos son declarados con const, ya que no puede ser reasignado.
+
+Sintaxis: 
+
+const datos_usuario = {
+    edad: 90,
+    nombre: "pepe",
+    dinero: 7000
+}
+
+# Arrays (clase 15)
+
+Se conocen como arrays, listas, arreglos, matriz, coleccion.
+Sirven para listar elementos.
+
+Sintaxis: 
+
+let notasTrimestres = [9, 10, 8]
+
+A los elementos de los arrays se los llaman por indice, que empieza a contar desde 0, es decir, primer elemento, indice 0, segundo elemento, indice 1, tercer elemento, indice 2.
+
+console.log(notasTrimestres[1])
+
+En este caso, se esta mostrando en consola la nota de elemento 2, indice 1
+
+**Tambien se pueden modificar asi:**
+
+array[1] = "7"
+console.log(array[1])
+
+**Se puede ver la longitud de un array asi:**
+
+console.log(array.length)
+
+# Metodos de Arrays
+
+**pop():** elimina el ultimo elemento y lo devuelve.  Mutan el valor original.
+nombres.pop()
+
+**shift():** elimina el primer elemento y lo devuelve. Mutan el valor original.
+nombres.shift()
+
+**push():** agrega un elemento al final del array. Muta el valor original. Devuelve la nueva cantidad de elementos.
+nombres.push("leonel")
+
+**unshift():** agrega un elemento al principio del array. Muta el valor original. Devuelve la nueva cantidad de elementos.
+nombres.unshift("axel")
+
+**indexOf():** te dice el indice del valor ingresado. No es compatible con arrays que no son tipo string.
+nombres.indexOf("juan")
+
+Sirve para manejar valores, los podemos cambiar una vez que sabemos el indice del elemento que queremos manejar. 
+
+**splice():** Recibe 3 argumentos (la posicion, cuantos elementos elimina, nuevo elemento).
+nombres.splice("valentina", 0, "pepe")
+
+En este caso, saca a valentina, y agrega a pepe.
+Cuantos elementos elimina empieza a contar desde el elemento especificado en la posicion.

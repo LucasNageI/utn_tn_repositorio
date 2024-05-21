@@ -187,3 +187,5 @@ eliminarNombre(nombres, "pepe")
 console.log(nombres)
 
 /* Principio KISS: Keep It Simple, Stupid */
+
+/* json = JavaScript Object Notation */

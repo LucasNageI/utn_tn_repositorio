@@ -104,7 +104,7 @@ let sumatoria_edad = 0
 
 for (const personaje of personajes) {
     console.log("mi nombre es " + personaje.nombre + " " + personaje.apellido + " y tengo " + personaje.edad + " años")
-    sumatoria_edad = sumatoria_edad +personaje.edad
+    sumatoria_edad = sumatoria_edad + personaje.edad
 }
 
 console.log("la sumatoria de las edades es: " + sumatoria_edad)
@@ -219,7 +219,7 @@ const objetos = [
     id: 1
     },
     {
-    nombre: "vaso",
+    nombre: "pila",
     id: 2
     },
     {

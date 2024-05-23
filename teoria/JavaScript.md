@@ -299,7 +299,7 @@ console.log(array[1])
 
 console.log(array.length)
 
-# Metodos de Arrays
+# Metodos de Arrays (clase 15)
 
 **pop():** elimina el ultimo elemento y lo devuelve.  Mutan el valor original.
 nombres.pop()
@@ -323,3 +323,197 @@ nombres.splice("valentina", 0, "pepe")
 
 En este caso, saca a valentina, y agrega a pepe.
 Cuantos elementos elimina empieza a contar desde el elemento especificado en la posicion.
+
+# recorridos de arrays (clase 16)
+
+for (let i = 0; i < nombres.length; i++){
+    console.log("hola " + nombres[i])
+}
+
+en este caso, se crea la variable de iteracion, y se le asigna un valor de 0, mientras i sea menor a la cantidad de elementos del array, se ejecuta el codigo dentro del for, y por cada iteracion, la variable aumenta su valor en 1, cada iteracion muestra en consola "hola " y accede al array nombres mediante la iteracion, que empieza en 0 y aumenta a medida de que transcurre el bucle, por lo que cada iteracion muestra un elemento nuevo del array.
+
+# arrays de objetos (clase 16)
+
+const carrito = [
+    {
+        nombre: "tv samsung",
+        precio: 300,
+        cantidad: 3
+    },
+    {
+        nombre: "patineta",
+        precio: 30,
+        cantidad: 1
+    }
+]
+
+Se declaran con const, ya que es conveniente al trabajar con objetos.
+Para recorrer un array de objetos, es similar a lo que se hace con un array de strings
+
+for (let i = 0; i < carrito.length; i++){
+    const producto = carrito[i]
+    console.log("has comprado el producto " + producto.nombre + "x" + producto.cantidad + "a un precio de " + (producto.cantidad * producto.precio))
+}
+
+ahora, cada vez que ocurre una iteracion, se crea una variable llamada producto, que indica a que indice del array va a acceder, luego, muestra en consola el nombre, la cantidad y el precio del producto del array al que se accedio, esto se repite hasta que el array se quede sin elementos para mostrar
+
+**en caso de querer hacer un conteo**
+
+tenemos que declarar una variable fuera del bucle. lo que hace que mantenga el valor al ser cambiada por cada iteracion, quedaria asi
+
+let sumatoria_edad_1 = 0
+
+for (let i = 0; i < personajes.length; i++){
+    const personaje = personajes[i]
+    console.log("mi nombre es " + personaje.nombre + " " + personaje.apellido + ", y tengo " + personaje.edad + " años")
+    sumatoria_edad_1 = sumatoria_edad_1 + personaje.edad
+}
+
+ahora, se declara una variable llamada sumatoria_edad_1, y se le asigna un valor inicial de 0, luego, en cada iteracion, a la variable sumatoria_edad_1 se le suma la edad del personaje mas el valor inicial de la variable sumatoria_edad_1
+
+de esta manera, al terminar la iteracion, la sumatoria se queda con el valor cambiado, y no se elimina.
+
+# forof (clase 16)
+
+esta es una manera mas simplificada de hacer lo que hicimos recien
+
+for (const personaje of personajes) {
+    console.log(personaje)
+}
+
+crea una variable "personaje", que guarda el valor de cada elemento del array "personajes"
+luego muestra en consola cada elemento del array
+
+los forof se utilizan para recorrer el array entero, en casos donde se excluyen objetos del array, es mejor con un for.
+
+# forin (clase 16)
+
+const datos = {
+    nombre: "pepe",
+    apellido: "suarez",
+    dni: "78653422"
+}
+
+let resultado = ""
+
+for (let propiedad in datos){ 
+    console.log(resultado + "\n" + propiedad + ": " + datos[propiedad])
+}
+
+esto sirve para recorrer las keys de un objeto, propiedad representa cada key, es decir nombre, apellido y dni.
+se muestra en consola un salto de linea, el nombre de la "propiedad: " y el valor de la propiedad
+
+# metodos avanzados de arrays (clase 16)
+
+**.forEach()**
+
+personajes.forEach(function (personajes){
+    console.log(personajes)
+})
+
+por cada elemento del array, ejecuta lo que hay dentro de la funcion anonima, en este caso, imprime cada elemento del array, es decir, cada objeto del array personajes
+
+**.filter()**
+
+filter recibe al elemento:
+    si el valor de retorno de la callback es truthly entonces el elemento se agregara al array
+    si el valor de retorno de la callback es falsy, se ignorara
+
+filter siempre retorna el array
+si el array es vacio, ningun elemento cumplio con la condicion del filter
+
+basicamente, filtra los elementos que cumplen con la condicion de la funcion, y elimina los elementos que no cumplan con dicha condicion.
+
+const personajes_mayores_de_edad = personajes.filter(function (personajes) {
+    return personajes.edad >= 18
+})
+
+esta es una manera de filtrar aquellos personajes que sean menores de 18 años
+
+**.find()**
+
+find puede retornar undefined si no encuentra ningun objeto, o el primer elemento que encuentra, si hay mas de uno, omite los otros.
+
+const id_1 = personajes.find(function (personajes){
+    return personajes.id === 1
+})
+
+console.log(id_1)
+
+en este caso, busca el elemento que tenga el valor id en 1
+
+**.map()**
+
+sirve para crear un array en base a un array
+siempre retorna un array
+va a recorrer el array, y por cada elemento, la callback va a ejecutarse
+el valor de retorno de la callback es el valor del nuevo elemento que se agrega al array creado
+
+const objetos = [
+    {
+    nombre: "vaso",
+    id: 1
+    },
+    {
+    nombre: "pila",
+    id: 2
+    },
+    {
+    nombre: "computadora",
+    id: 3
+    }
+]
+
+dado este array, vamos a crear otro array, esta vez de strings, que contenga el nombre de cada elemento
+
+const mapeo_objetos = objetos.map(function (objetos){
+    return "<div>" + objetos.nombre + "</div>"
+})
+
+se creo un array donde hay 3 elementos, y por cada uno se imprime el nombre dentro de un div
+
+**.some()**
+
+sirve para saber si un elemento cumple con x condicion
+
+
+
+const numeros = [1, 2, 3, 4, 5];
+const numero_mayor_a_3 = numeros.some(function(numero) {
+    return numero > 3;
+});
+console.log(numero_mayor_a_3); 
+
+en este caso, se crea un array de numeros, y se usa el some para saber si hay alguno de los elementos del array que sea mayor a 3
+
+devuelve true, ya que 4 y 5 son mayores a 3
+
+**.every()**
+
+sirve para saber si todos los elementos cumplen con x condicion
+
+const edades = [22, 18, 25, 30, 17];
+const todos_son_adultos = edades.every(function(edad) {
+    return edad >= 18;
+});
+
+console.log(todos_son_adultos);
+
+ahora, se da un array de edades, y posteriormente se usa un every para saber si todos los elementos del array edades son mayores de 18
+
+devuelve false, ya que 17 < 18
+
+**.findIndex()**
+
+sirve para buscar el indice de x elemento
+
+const frutas = ["manzana", "sandia", "melon", "banana"]
+const buscar_indice_banana = frutas.findIndex(function (fruta){
+    return fruta.includes("banana")
+})
+
+console.log(buscar_indice_banana)
+
+devuelve 3, que es el indice de banana.
+
+lo que hizo en este caso, fue buscar algun elemento que incluya banana en su nombre

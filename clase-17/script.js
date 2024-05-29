@@ -99,3 +99,39 @@ if(operacion_ingresada === "+"){
 else {
     alert(resta)
 }
+
+/* HISTORIAL */
+
+const historial = 
+[
+    {
+        accion: 'CALCULAR',
+        operacion: '+',
+        a: 1,
+        b: 2,
+        resultado: 3 
+    },
+    {
+        accion: 'CALCULAR',
+        operacion: '-',
+        a: 1,
+        b: 2,
+        resultado: -1 
+    },
+]
+
+function renderizarHIstorial (historialRecibido) {
+    let listaHistorial = ""
+    for (const item of historialRecibido) {
+        listaHistorial = listaHistorial + `
+        accion: ${item.accion}
+        operacion: ${item.operacion}
+        numeroA: ${item.a}
+        numeroB: ${item.b}
+        resultado: ${item.resultado}
+        `
+    }
+    return listaHistorial
+}
+
+console.log(renderizarHIstorial(historial))

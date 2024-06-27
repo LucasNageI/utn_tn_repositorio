@@ -8,6 +8,8 @@ import ReactDOM from 'react-dom/client'
 /* un componente es una funcion que retorna JSX (es un codigo parecido a HTML) */
 import App from './App.jsx'
 
+import './style.css'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
     <App /> /* esta es la invocacion de un componente */
 )

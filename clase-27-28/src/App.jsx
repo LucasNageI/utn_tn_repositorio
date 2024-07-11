@@ -3,7 +3,10 @@ import {Cart, Detail, Home, Contact} from "./Pages/index.js"
 import {Routes, Route} from 'react-router-dom'
 
 
+
 function App() {
+
+
   return (
     <>
         <Routes>
